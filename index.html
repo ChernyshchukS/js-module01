@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <title>Чернищук Сергій, 633п</title>
+    <style>
+        body {
+            font-size: 16px;
+            font-family: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            line-height: 1.6;
+            color: #333;
+            text-align: justify;
+            background-color: #fff;
+        }
+
+        h1,h2,h3 {
+            margin: 1em 0 0.6em 0;
+            font-weight: normal;
+            line-height: 1.2;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        h3 {
+            font-size: 1.75rem;
+        }
+
+        p {
+        }
+        b+i {
+            color: red; /* Червоний колір тексту */
+        }
+        .example {
+            background: #ecf8ff;
+            padding: 10px;
+            border-radius: 7px;
+            font-weight: bold;
+        }
+        span.tag {
+            color: #c82800;
+            font-weight: 600;
+        }
+        pre {
+            margin: 5px 5px 25px 5px;
+            padding: 10px 15px 10px 25px;
+            background: #FAFAFA;
+            color: #333;
+            border-top: #DFDFDF solid 1px;
+            border-right: #DFDFDF solid 1px;
+            border-bottom: #DFDFDF solid 1px;
+            border-left: #DFDFDF solid 1px;
+            font-family: SFMono-Regular, Menlo, Monaco, Consolas, "PT Mono", "Liberation Mono", "Courier New", monospace;
+            line-height: 1.5;
+            border-radius: 3px;
+            white-space: pre-wrap;
+            -moz-tab-size: 4;
+            tab-size: 4
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            vertical-align: middle
+        }
+        figure {
+            text-align: center;
+            border: 1px solid #b2b2b2;
+            box-shadow: 3px 3px 0 0 #cbcbcb;
+            border-radius: 7px;
+            padding: 10px;
+            margin: 10px 5px;
+            background: #f7f7f7;
+        }
+    </style>
+</head>
+<body>
+<h1>
+    Сергій Володимирович Чернищук, 633п, Модуль 1
+</h1>
+<h2>
+    Зміст
+</h2>
+<ul>
+    <li>
+        4. CSS: Сусідні селектори
+    </li>
+    <li>
+        36. CSS: Блочні елементи. Приклади
+
+    </li>
+</ul>
+<h2>
+    4. CSS: Сусідні селектори
+</h2>
+<div>
+    <h3>
+        Опис
+    </h3>
+    <p> Сусідніми називаються елементи веб-сторінки, коли вони йдуть безпосередньо один за одним в коді документа. </p>
+    <h3> Синтаксис </h3>
+    <p class="example">
+        E + F {Опис правил стилю}
+    </p>
+    <p>
+        Для управління стилем сусідніх елементів використовується символ плюса (+), який встановлюється між двома
+        селекторами E і F. Прогалини навколо плюса не обов'язкові. Стиль при такому записі застосовується до елементу F,
+        але тільки в тому випадку, якщо він є сусіднім для елемента E і варто відразу після нього. Розглянемо кілька
+        прикладів.
+    </p>
+    <p class="example">
+        &lt;p&gt; Lorem ipsum &lt;b&gt; dolor &lt;/b&gt; sit amet. &lt;/p&gt;
+    </p>
+    <p>
+        Тег
+        <span class="tag">
+            &lt;b&gt;
+        </span>
+        є дочірнім по відношенню до тегу
+        <span class="tag">
+            &lt;p&gt;
+        </span>
+        , оскільки він знаходиться всередині цього контейнера. Відповідно
+        <span class="tag">
+            &lt;p&gt;
+        </span>
+        виступає в якості батька
+        <span class="tag">
+            &lt;b&gt;
+        </span>.
+    </p>
+    <p class="example">
+        &lt;p&gt; Lorem ipsum &lt;b&gt; dolor &lt;/b&gt; &lt;var&gt; sit &lt;/var&gt; amet. &lt;/p&gt;
+    </p>
+    <p>
+        Теги
+        <span class="tag">
+            &lt;var&gt;
+        </span>
+        і
+        <span class="tag">
+            &lt;b&gt;
+        </span>
+        ніяк не перекриваються і являють собою сусідні елементи. Те, що вони розташовані всередині контейнера
+        <span class="tag">
+            &lt;p&gt;
+        </span>
+        , не впливає на їхнє ставлення.
+    </p>
+    <p class="example">
+        &lt;p&gt; Lorem &lt;b&gt; ipsum &lt;/b&gt; dolor sit amet, &lt;i&gt; consectetuer &lt;/i&gt; adipiscing &lt;tt&gt; elit &lt;/tt&gt; . &lt;/p&gt;
+    </p>
+    <p>
+        Сусідніми тут є теги
+        <span class="tag">
+            &lt;b&gt;
+        </span>
+        і
+        <span class="tag">
+            &lt;i&gt;
+        </span>
+        , а також
+        <span class="tag">
+            &lt;i&gt;
+        </span>
+        і
+        <span class="tag">
+            &lt;tt&gt;
+        </span>.
+        При цьому
+        <span class="tag">
+            &lt;b&gt;
+        </span>
+        і
+        <span class="tag">
+            &lt;tt&gt;
+        </span>
+        до сусідніх елементів не належать через те, що між ними розташований контейнер
+        <span class="tag">
+            &lt;i&gt;
+        </span>
+        .
+    </p>
+    <h3>
+        Приклад
+    </h3>
+    <pre class="sh_html">
+        &lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+            &lt;head&gt;
+                &lt;meta charset=&quot;utf-8&quot;&gt;
+                &lt;title&gt; Сусідні селектори &lt;/title&gt;
+                &lt;style&gt;
+                    b+i {color: red; /* Червоний колір тексту */ }
+                &lt;/style&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;p&gt;
+                    Lorem
+                    &lt;b&gt; ipsum &lt;/b&gt;
+                    dolor sit amet,
+                    &lt;i&gt; consectetuer &lt;/i&gt;
+                    adipiscing elit.
+                &lt;/p&gt;
+                &lt;p&gt;
+                    Lorem ipsum dolor sit amet,
+                    &lt;i&gt; consectetuer &lt;/i&gt;
+                    adipiscing elit.
+                &lt;/p&gt;
+            &lt;/body&gt;
+        &lt;/html&gt;
+    </pre>
+    <p>
+        Результат даного прикладу показаний на рисунку 1.
+    </p>
+    <figure>
+        <img src="https://html-css.co.ua/uploads/css/selector_ajacent.png" alt="Червоний колір тексту для сусідніх селектор">
+        <figcaption> Рисунок 1 - Червоний колір тексту для сусідніх селекторів</figcaption>
+    </figure>
+    <h3>
+        Браузери
+    </h3>
+    <p>
+        Браузер Internet Explorer 7 не застосовує стиль, якщо між селекторами розташовується коментар (
+        <span class="var">
+            B + /* плюс */ I
+        </span>)
+        .
+    </p>
+</div>
+
+
+<h2>
+    36. CSS: Блочні елементи. Приклади
+</h2>
+
+<div>
+    <h3>
+        Опис
+    </h3>
+    <p>
+        <b>
+            Більшість структурних елементів
+        </b>
+        html ділитися
+
+        <i>
+            на дві основні групи
+        </i>
+        , які дозволяють сформувати документ практично
+        будь-якої складності:
+    </p>
+    <p class="example">
+        блокові елементи (block)
+    </p>
+    <p class="example">
+        рядкові елементи (inline).
+    </p>
+    <p>
+        У чому полягає основна різниця між цими елементами? Кардинальним відмінністю між ними є те, що
+        <b>
+            рядкові елементи
+        </b>
+        (<i>inline</i>),
+        <b>
+            за визначенням
+        </b>
+        ,
+        <i>
+            не мають верхнього і нижнього відступу
+        </i>
+        . Це засновано на тому, що в загальному потоці <b>рядкові елементи</b> (<i>inline</i>) йдуть один за одним,
+        тобто в одному рядку і на інший переходять тільки тоді, коли доходять до кінця рядка, або коли щось примусово
+        змушує перейти на новий рядок. <b>Блокові елементи</b> (<i>block</i>), на відміну від рядкових елементів, в
+        загальному потоці розташовуються один під одним.
+    </p>
+    <p>
+        Тобто, <b>рядковим елементам</b> <i>не можна задати margin-top, margin-bottom, padding-top, padding-bottom</i>.
+        Завдяки цій характеристиці є підводні камені, вони полягають у тому, що згідно специфікації HTML 4.0, є ряд
+        елементів, які відносяться до рядкових елементів.
+    </p>
+    <p>
+        Для наочності нижче приводитися список елементів, які відносяться до рядкових і які до блокових.
+    </p>
+    <h3>
+        Рядкові елементи:
+    </h3>
+    <pre>
+        <code>
+            &lt;a href=""&gt;xxx&lt;/a&gt;
+            &lt;br /&gt;
+            &lt;cite&gt;xxx&lt;/cite&gt;
+            &lt;code&gt;xxx&lt;/code&gt;
+            &lt;em&gt;xxx&lt;/em&gt;
+            &lt;img /&gt;
+            &lt;input /&gt;
+            &lt;label&gt;xxx&lt;/label&gt;
+            &lt;select&gt;&lt;/select&gt;
+            &lt;span&gt;xxx&lt;/span&gt;
+            &lt;strong&gt;xxx&lt;/strong&gt;
+            &lt;sub&gt;xxx&lt;/sub&gt;
+            &lt;sup&gt;xxx&lt;/sup&gt;
+            &lt;textarea&gt;xxx&lt;/textarea&gt;
+        </code>
+    </pre>
+    <h3>
+        Блокві елементи:
+    </h3>
+    <pre>
+        <code>
+            &lt;div&gt;xxx&lt;/div&gt;
+            &lt;dl&gt;xxx&lt;/dl&gt;
+            &lt;form&gt;xxx&lt;/form&gt;
+            &lt;h1&gt;xxx&lt;/h1&gt;
+            &lt;h2&gt;xxx&lt;/h2&gt;
+            &lt;h3&gt;xxx&lt;/h3&gt;
+            &lt;h4&gt;xxx&lt;/h4&gt;
+            &lt;h5&gt;xxx&lt;/h5&gt;
+            &lt;h6&gt;xxx&lt;/h6&gt;
+            &lt;hr /&gt;
+            &lt;noscript&gt;xxx&lt;/noscript&gt;
+            &lt;ol&gt;xxx&lt;/ol&gt;
+            &lt;p&gt;xxx&lt;/p&gt;
+            &lt;pre&gt;xxx&lt;/pre&gt;
+            &lt;table&gt;xxx&lt;/table&gt;
+            &lt;ul&gt;xxx&lt;/ul&gt;
+        </code>
+    </pre>
+</div>
+
+</body>
+</html>
